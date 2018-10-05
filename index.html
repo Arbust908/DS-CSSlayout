@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Css Layout</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/">
+      <span class="fa-stack fa-1x">
+        <i class="fal fa-chevron-left fa-stack-2x"></i>
+        <i class="fal fa-chevron-right fa-stack-2x"></i>
+        <i class="fal fa-code fa-stack-2x"></i>
+      </span>
+    </a>
+    <nav>
+      <ul>
+        <li><a onclick="themeColor('noche')" title="modo Noche" ><i class="fas fa-moon"></i></a></li>
+        <li><a onclick="themeColor('navidad')" title="modo Navidad" ><i class="fas fa-air-freshener"></i></a></li>
+        <li><a onclick="themeColor('atomico')" title="modo Atomico" ><i class="fas fa-atom"></i></a></li>
+        <li><a onclick="themeColor('fuego')" title="modo Fuego" ><i class="fas fa-burn"></i></a></li>
+        <li><a onclick="themeColor('random')" title="modo Aleatorio" ><i class="fas fa-random"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="body">
+    <aside>
+      <ul>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Nosotros</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </aside>
+    <section>
+      <article>
+        <div>
+          <i class="fab fa-css3-alt"></i>
+        </div>
+        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <h2>Lo ultimo de CSS</h2>
+        <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
+        <button onclick="popModal()">ver mas</button>
+      </article>
+
+      <article>
+        <div>
+          <i class="fab fa-css3-alt"></i>
+        </div>
+        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <h2>Lo ultimo de CSS</h2>
+        <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
+        <button>ver mas</button>
+      </article>
+
+      <article>
+        <div>
+          <i class="fab fa-css3-alt"></i>
+        </div>
+        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <h2>Lo ultimo de CSS</h2>
+        <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
+        <button>ver mas</button>
+      </article>
+
+      <dialog class="" id="modal">
+        <header>
+          <h2>Lo ultimo de CSS</h2>
+          <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+          <a onclick="killModal()">
+            <i class="fas fa-times-octagon"></i>
+          </a>
+        </header>
+        <main>
+          <section class="tabs">
+            <button active onclick="showContent('main');activate(this);">Despues de CSS3</button>
+            <button onclick="showContent('second');activate(this);">Spects</button>
+          </section>
+          <section class="content" data-tab="main">
+            <h4>Despues de CSS3</h4>
+            <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit magnam dolor eum tenetur in amet harum voluptatem dolorem ratione exercitationem reprehenderit ex, repellat facilis consectetur itaque doloribus minima porro veniam. Cupiditate animi modi hic magnam ducimus dolorum incidunt error, facilis corrupti tempore ut quod ipsam repellendus tempora ipsa quia aperiam!</p>
+          </section>
+          <section class="content" data-tab="second" hidden>
+            <h4>Spects</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas aut est exercitationem amet modi nemo eos soluta ex nesciunt!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officia nihil similique est fuga dicta pariatur autem doloremque eius quis.</p>
+          </section>
+        </main>
+        <footer>
+          <p>Escrito por <strong>Fran Blanco</strong></p>
+          <p>-<em>27/08/2018</em>-</p>
+          <div>
+            <i class="fab fa-css3-alt"></i>
+          </div>
+        </footer>
+      </dialog>
+    </section>
+  </main>
+  <footer class="footer">
+    <a href="/">
+      <span class="fa-stack fa-1x">
+        <i class="fal fa-chevron-left fa-stack-2x"></i>
+        <i class="fal fa-chevron-right fa-stack-2x"></i>
+        <i class="fal fa-code fa-stack-2x"></i>
+      </span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href=""><i class="fab fa-behance"></i></a></li>
+        <li><a href=""><i class="fab fa-dribbble"></i></a></li>
+        <li><a href=""><i class="fab fa-github-alt"></i></a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script>
+    const noche = ['#34495e', '#bdc3c7', '#2c3e50', '#95a5a6', "'Montserrat', sans-serif", '0.1s linear'];
+    const navidad = ['#27ae60', '#e74c3c', '#c0392b', '#2ecc71', "'Roboto Slab', serif", '1s ease-out'];
+    const atomico = ['#2ecc71','#34495e','#27ae60', '#f39c12',"'Roboto Slab', serif",'0.3s ease-in'];
+    const fuego = ['#e74c3c', '#f1c40f', '#e74c3c', '#95a5a6', "sans-serif", '0.6s ease-in-out'];
+    const random = [noche,navidad,atomico,fuego];
+    function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    function themeColor(tema){
+      console.log('theme change');
+      var modo = [];
+      switch (tema) {
+        case 'noche':
+          modo = noche;
+          break;
+        case 'navidad':
+          modo = navidad;
+          break;
+        case 'atomico':
+          modo = atomico;
+          break;
+        case 'fuego':
+          modo = fuego;
+          break;
+        case 'random':
+          modo = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]];
+          break;
+        default:
+          break;
+      }
+      document.documentElement.style.setProperty('--color-bg', modo[0] );
+      document.documentElement.style.setProperty('--color-text', modo[1]);
+      document.documentElement.style.setProperty('--color-shadows', modo[2]);
+      document.documentElement.style.setProperty('--color-hover', modo[3]);
+      document.documentElement.style.setProperty('--font-family', modo[4]);
+      document.documentElement.style.setProperty('--trans-n', modo[5]);
+    }
+  </script>
+  <script>
+    const modal = document.querySelector('#modal');
+    let transition;
+    
+    function popModal() {
+      modal.showModal();
+      transition = setTimeout(function(){
+        modal.classList.add('dialog-scale');
+        modal.classList.add('modal');
+      },0.5);
+    }
+    function killModal(){
+      modal.classList.remove('dialog-scale');
+      modal.close();
+      clearTimeout;
+    }
+  </script>
+  <script>
+    function activate(ele){
+      const buttons = document.querySelectorAll('.tabs>button');
+      buttons.forEach(function(b){
+        b.removeAttribute("active");
+      });
+      ele.setAttribute('active',true);
+    }
+    function showContent(tab){
+      const tabs = document.querySelectorAll('.content');
+      tabs.forEach(function(t){
+        if(t.dataset.tab === tab && t.hasAttribute('hidden')){
+          t.removeAttribute("hidden");
+        } else {
+          t.setAttribute("hidden",true);
+        }
+      })
+    }
+  </script>
+  <script>
+    var iW = window.innerWidth;
+    window.onload = function(){
+      if(iW >= 760){
+        const tabs = document.querySelectorAll('.content');
+        tabs.forEach(function (t) {
+          t.removeAttribute("hidden");
+        });
+      }
+    }
+  </script>
+</body>
+</html>
