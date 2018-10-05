@@ -7,8 +7,8 @@
   <title>Css Layout</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-9ralMzdK1QYsk4yBY680hmsb4/hJ98xK3w0TIaJ3ll4POWpWUYaA2bRjGGujGT8w"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+  crossorigin="anonymous"><!-- FONT AWESOME! -->
+  <link rel="stylesheet" href="css/style.css"><!-- NUESTRO CSS -->
 </head>
 <body>
   <header class="header">
@@ -21,11 +21,11 @@
     </a>
     <nav>
       <ul>
-        <li><a onclick="themeColor('noche')" title="modo Noche" ><i class="fas fa-moon"></i></a></li>
-        <li><a onclick="themeColor('navidad')" title="modo Navidad" ><i class="fas fa-air-freshener"></i></a></li>
-        <li><a onclick="themeColor('atomico')" title="modo Atomico" ><i class="fas fa-atom"></i></a></li>
-        <li><a onclick="themeColor('fuego')" title="modo Fuego" ><i class="fas fa-burn"></i></a></li>
-        <li><a onclick="themeColor('random')" title="modo Aleatorio" ><i class="fas fa-random"></i></a></li>
+        <li><a onclick="themeColor('noche')" title="Modo Noche" ><i class="fas fa-moon"></i></a></li>
+        <li><a onclick="themeColor('navidad')" title="Modo Navidad" ><i class="fas fa-air-freshener"></i></a></li>
+        <li><a onclick="themeColor('atomico')" title="Modo Atomico" ><i class="fas fa-atom"></i></a></li>
+        <li><a onclick="themeColor('fuego')" title="Modo Fuego" ><i class="fas fa-burn"></i></a></li>
+        <li><a onclick="themeColor('random')" title="Modo Aleatorio" ><i class="fas fa-random"></i></a></li>
       </ul>
     </nav>
   </header>
@@ -42,36 +42,36 @@
         <div>
           <i class="fab fa-css3-alt"></i>
         </div>
-        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <img src="img/imagencss.jpg" alt="Actualizaciones de CSS">
         <h2>Lo ultimo de CSS</h2>
         <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
         <button onclick="popModal()">ver mas</button>
       </article>
-
+      
       <article>
         <div>
           <i class="fab fa-css3-alt"></i>
         </div>
-        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <img src="img/imagencss.jpg" alt="Actualizaciones de CSS">
         <h2>Lo ultimo de CSS</h2>
         <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
         <button>ver mas</button>
       </article>
-
+      
       <article>
         <div>
           <i class="fab fa-css3-alt"></i>
         </div>
-        <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+        <img src="img/imagencss.jpg" alt="Actualizaciones de CSS">
         <h2>Lo ultimo de CSS</h2>
         <p>CSS dejo su version 3 para traer muchas novedades y potenciar mucho su funcionalidad</p>
         <button>ver mas</button>
       </article>
-
+      
       <dialog class="" id="modal">
         <header>
           <h2>Lo ultimo de CSS</h2>
-          <img src="img/417645-636618158800124958-16x9.jpg" alt="Actualizaciones de CSS">
+          <img src="img/imagencss.jpg" alt="Actualizaciones de CSS">
           <a onclick="killModal()">
             <i class="fas fa-times-octagon"></i>
           </a>
@@ -124,29 +124,29 @@
     const fuego = ['#e74c3c', '#f1c40f', '#e74c3c', '#95a5a6', "sans-serif", '0.6s ease-in-out'];
     const random = [noche,navidad,atomico,fuego];
     function rand(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
     function themeColor(tema){
       console.log('theme change');
       var modo = [];
       switch (tema) {
         case 'noche':
-          modo = noche;
-          break;
+        modo = noche;
+        break;
         case 'navidad':
-          modo = navidad;
-          break;
+        modo = navidad;
+        break;
         case 'atomico':
-          modo = atomico;
-          break;
+        modo = atomico;
+        break;
         case 'fuego':
-          modo = fuego;
-          break;
+        modo = fuego;
+        break;
         case 'random':
-          modo = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]];
-          break;
+        modo = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]];
+        break;
         default:
-          break;
+        break;
       }
       document.documentElement.style.setProperty('--color-bg', modo[0] );
       document.documentElement.style.setProperty('--color-text', modo[1]);
