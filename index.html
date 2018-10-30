@@ -119,6 +119,14 @@
   </footer>
   <script>
     
+    window.addEventListener('DOMContentLoaded', () => {
+      if(window.innerWidth >= 760){
+        const tabs = document.querySelectorAll('.content');
+        tabs.forEach(function (t) {
+          t.removeAttribute("hidden");
+        });
+      }
+    
     function rand(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -128,12 +136,12 @@
       this.navidad = ['#27ae60', '#e74c3c', '#c0392b', '#2ecc71', "'Roboto Slab', serif", '1s ease-out'];
       this.atomico = ['#2ecc71','#34495e','#27ae60', '#f39c12',"'Roboto Slab', serif",'0.3s ease-in'];
       this.fuego = ['#e74c3c', '#f1c40f', '#e74c3c', '#95a5a6', "sans-serif", '0.6s ease-in-out'];
-
+      
       const random = [this.noche, this.navidad, this.atomico, this.fuego];
       
       this.random = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]]
       
-
+      
       document.documentElement.style.setProperty('--color-bg', this[tema][0] );
       document.documentElement.style.setProperty('--color-text', this[tema][1]);
       document.documentElement.style.setProperty('--color-shadows', this[tema][2]);
@@ -141,7 +149,7 @@
       document.documentElement.style.setProperty('--font-family', this[tema][4]);
       document.documentElement.style.setProperty('--trans-n', this[tema][5]);
     }
-
+    
     const modal = document.querySelector('#modal');
     let transition;
     
@@ -157,7 +165,7 @@
       modal.close();
       clearTimeout;
     }
-
+    
     function activate(ele){
       const buttons = document.querySelectorAll('.tabs>button');
       buttons.forEach(function(b){
@@ -175,16 +183,9 @@
         }
       })
     }
-
-    var iW = window.innerWidth;
-    window.onload = function(){
-      if(iW >= 760){
-        const tabs = document.querySelectorAll('.content');
-        tabs.forEach(function (t) {
-          t.removeAttribute("hidden");
-        });
-      }
-    }
+    
+  })
+    
   </script>
 </body>
 </html>
