@@ -118,45 +118,38 @@
     </nav>
   </footer>
   <script>
-    const noche = ['#34495e', '#bdc3c7', '#2c3e50', '#95a5a6', "'Montserrat', sans-serif", '0.1s linear'];
-    const navidad = ['#27ae60', '#e74c3c', '#c0392b', '#2ecc71', "'Roboto Slab', serif", '1s ease-out'];
-    const atomico = ['#2ecc71','#34495e','#27ae60', '#f39c12',"'Roboto Slab', serif",'0.3s ease-in'];
-    const fuego = ['#e74c3c', '#f1c40f', '#e74c3c', '#95a5a6', "sans-serif", '0.6s ease-in-out'];
-    const random = [noche,navidad,atomico,fuego];
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      if(window.innerWidth >= 760){
+        const tabs = document.querySelectorAll('.content');
+        tabs.forEach(function (t) {
+          t.removeAttribute("hidden");
+        });
+      }
+    
     function rand(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     function themeColor(tema){
-      console.log('theme change');
-      var modo = [];
-      switch (tema) {
-        case 'noche':
-        modo = noche;
-        break;
-        case 'navidad':
-        modo = navidad;
-        break;
-        case 'atomico':
-        modo = atomico;
-        break;
-        case 'fuego':
-        modo = fuego;
-        break;
-        case 'random':
-        modo = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]];
-        break;
-        default:
-        break;
-      }
-      document.documentElement.style.setProperty('--color-bg', modo[0] );
-      document.documentElement.style.setProperty('--color-text', modo[1]);
-      document.documentElement.style.setProperty('--color-shadows', modo[2]);
-      document.documentElement.style.setProperty('--color-hover', modo[3]);
-      document.documentElement.style.setProperty('--font-family', modo[4]);
-      document.documentElement.style.setProperty('--trans-n', modo[5]);
+      
+      this.noche = ['#34495e', '#bdc3c7', '#2c3e50', '#95a5a6', "'Montserrat', sans-serif", '0.1s linear'];
+      this.navidad = ['#27ae60', '#e74c3c', '#c0392b', '#2ecc71', "'Roboto Slab', serif", '1s ease-out'];
+      this.atomico = ['#2ecc71','#34495e','#27ae60', '#f39c12',"'Roboto Slab', serif",'0.3s ease-in'];
+      this.fuego = ['#e74c3c', '#f1c40f', '#e74c3c', '#95a5a6', "sans-serif", '0.6s ease-in-out'];
+      
+      const random = [this.noche, this.navidad, this.atomico, this.fuego];
+      
+      this.random = [random[rand(0,3)][0], random[rand(0,3)][1], random[rand(0,3)][2], random[rand(0,3)][3], random[rand(0,3)][4],  random[rand(0, 3)][5]]
+      
+      
+      document.documentElement.style.setProperty('--color-bg', this[tema][0] );
+      document.documentElement.style.setProperty('--color-text', this[tema][1]);
+      document.documentElement.style.setProperty('--color-shadows', this[tema][2]);
+      document.documentElement.style.setProperty('--color-hover', this[tema][3]);
+      document.documentElement.style.setProperty('--font-family', this[tema][4]);
+      document.documentElement.style.setProperty('--trans-n', this[tema][5]);
     }
-  </script>
-  <script>
+    
     const modal = document.querySelector('#modal');
     let transition;
     
@@ -172,8 +165,7 @@
       modal.close();
       clearTimeout;
     }
-  </script>
-  <script>
+    
     function activate(ele){
       const buttons = document.querySelectorAll('.tabs>button');
       buttons.forEach(function(b){
@@ -191,17 +183,9 @@
         }
       })
     }
-  </script>
-  <script>
-    var iW = window.innerWidth;
-    window.onload = function(){
-      if(iW >= 760){
-        const tabs = document.querySelectorAll('.content');
-        tabs.forEach(function (t) {
-          t.removeAttribute("hidden");
-        });
-      }
-    }
+    
+  })
+    
   </script>
 </body>
 </html>
